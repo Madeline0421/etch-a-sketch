@@ -22,6 +22,11 @@ button {
     gap: 50px;
 }
 
+.size-container { 
+    display: flex;
+    gap: 30px;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -53,3 +58,6 @@ button {
     width: 200px;
 }
 
+#value { 
+    font-weight: bold;
+}
