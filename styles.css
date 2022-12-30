@@ -29,19 +29,20 @@ button {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
+    grid-template-columns: repeat(16, minmax(auto, 1fr));
     background-color: pink;
     padding: 10px;
     grid-auto-columns: 3px;
     width: 500px;
-    height: auto;
+    height: 500px;
+    
 }
 
 .grid-item { 
+    display: flex;
     aspect-ratio: 1 / 1;
     background-color: lightblue;
     border: 1px solid white;
-    padding: 10px;
     text-align: center;
 }
 
