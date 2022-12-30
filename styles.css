@@ -1,3 +1,10 @@
+body { 
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -17,6 +24,12 @@
     text-align: center;
 }
 
-.change-color { 
+.black-bg { 
     background-color: black;
 }
+
+#title { 
+    font-size: 30px;
+    font-weight: bold;
+}
+
