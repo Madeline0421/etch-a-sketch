@@ -2,6 +2,8 @@ const gridContainer = document.querySelector('.grid-container');
 const value = document.querySelector('#value');
 const gridInput = document.querySelector('#grid-input'); 
 
+const resetButton = document.querySelector('#reset');
+
 value.textContent = "Grid Size: " + gridInput.value;
 
 /**
@@ -16,10 +18,6 @@ gridInput.addEventListener('input', (e) => {
     console.log("size: " + rowSize);
 });
 
-function reset() {
-    document.querySelectorAll(".grid-item").forEach((e) => e.parentNode.removeChild(e));
-  }
-
 rowSize = 16;
 size = 256;
 createGrid();
@@ -32,13 +30,22 @@ function createGrid() {
         gridContainer.append(gridItem);
         gridItem.addEventListener('mouseover', changeColor);
     }
-
     gridContainer.setAttribute('style',
     'grid-template-columns: repeat(' + rowSize + ', 1fr)');
 
 }
 
-function changeColor(e) { 
-    e.target.classList.add('change-color');
+function reset() {
+    document.querySelectorAll(".grid-item").forEach((e) => e.parentNode.removeChild(e));
 }
 
+resetButton.addEventListener('click', () => {
+    allItems = document.querySelectorAll('.grid-item');
+    allItems.forEach((item) => {
+        item.classList.remove('black-bg');
+    });
+});
+
+function changeColor(e) { 
+    e.target.classList.add('black-bg');
+}
