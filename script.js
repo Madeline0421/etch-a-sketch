@@ -4,7 +4,7 @@ const gridInput = document.querySelector('#grid-input');
 
 const resetButton = document.querySelector('#reset');
 
-value.textContent = "Grid Size: " + gridInput.value;
+value.textContent = "Grid Size: " + 16;
 
 /**
  * Updates size of the grid
