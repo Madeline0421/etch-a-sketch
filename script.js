@@ -38,19 +38,17 @@ function createGrid() {
             const gridItem = document.createElement('div');
             gridItem.className = 'grid-item';
             gridContainer.append(gridItem);
-            
-            gridItem.addEventListener('click', () => {
-                allItems.forEach(item => { 
-                    item.addEventListener('mouseover', changeColor)
-                });
-            });
     }
+    const allItems = document.querySelectorAll('.grid-item');
+
+    allItems.forEach(item => { 
+        item.addEventListener('mouseover', changeColor)
+    });
     gridContainer.setAttribute('style',
     // updating the attribute with the following concatenated string:
     'grid-template-columns: repeat(' + rowSize + ', 1fr)');
 
 }
-const allItems = document.querySelectorAll('.grid-item');
 
 function changeColor(e) { 
     e.target.classList.add('change-color');
