@@ -1,0 +1,18 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    background-color: pink;
+    padding: 10px;
+    grid-auto-columns: 5px;
+    width: 500px;
+    height: auto;
+}
+
+.grid-item { 
+    aspect-ratio: 1 / 1;
+    background-color: lightblue;
+    border: 1px solid white;
+    padding: 10px;
+
+    text-align: center;
+}
