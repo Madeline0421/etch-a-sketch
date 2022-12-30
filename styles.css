@@ -5,13 +5,25 @@ body {
 
 }
 
+.container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-container {
+    display: flex;
+    gap: 10px;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     background-color: pink;
     padding: 10px;
-    grid-auto-columns: 5px;
-    width: 500px;
+    grid-auto-columns: 3px;
+    width: 600px;
     height: auto;
 }
 
@@ -31,5 +43,9 @@ body {
 #title { 
     font-size: 30px;
     font-weight: bold;
+}
+
+#grid-input { 
+    width: 200px;
 }
 
