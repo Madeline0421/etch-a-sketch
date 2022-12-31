@@ -3,8 +3,10 @@ const value = document.querySelector('#value');
 const gridInput = document.querySelector('#grid-input'); 
 
 const resetButton = document.querySelector('#reset');
+const rainbowButton = document.querySelector('#rainbow');
 
 value.textContent = "Grid Size: " + 16;
+let rainbowColors = false;
 
 /**
  * Updates size of the grid
@@ -46,6 +48,16 @@ resetButton.addEventListener('click', () => {
     });
 });
 
+rainbowButton.addEventListener('click', () => {
+    rainbowColors = true;
+});
+
 function changeColor(e) { 
-    e.target.classList.add('black-bg');
+    if (rainbowColors) { 
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        e.target.classList.remove('black-bg');
+        e.target.setAttribute('style', 'background-color: #' + randomColor);
+    } else { 
+        e.target.classList.add('black-bg');
+    }
 }
