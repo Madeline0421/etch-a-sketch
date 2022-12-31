@@ -4,9 +4,11 @@ const gridInput = document.querySelector('#grid-input');
 
 const resetButton = document.querySelector('#reset');
 const rainbowButton = document.querySelector('#rainbow');
+const blackButton = document.querySelector('#black');
 
 value.textContent = "Grid Size: " + 16;
 let rainbowColors = false;
+let blackColor = true;
 
 /**
  * Updates size of the grid
@@ -50,6 +52,12 @@ resetButton.addEventListener('click', () => {
 
 rainbowButton.addEventListener('click', () => {
     rainbowColors = true;
+    blackColor = false;
+});
+
+blackButton.addEventListener('click', () => {
+    blackColor = true;
+    rainbowColors = false;
 });
 
 function changeColor(e) { 
@@ -57,7 +65,9 @@ function changeColor(e) {
         let randomColor = Math.floor(Math.random()*16777215).toString(16);
         e.target.classList.remove('black-bg');
         e.target.setAttribute('style', 'background-color: #' + randomColor);
-    } else { 
+    } else if (blackColor) { 
+        e.target.removeAttribute('style');
         e.target.classList.add('black-bg');
+
     }
 }
