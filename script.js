@@ -47,6 +47,7 @@ resetButton.addEventListener('click', () => {
     allItems = document.querySelectorAll('.grid-item');
     allItems.forEach((item) => {
         item.classList.remove('black-bg');
+        item.removeAttribute('style');
     });
 });
 
